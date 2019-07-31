@@ -8,11 +8,16 @@ use Tariff\Abstracts\Tariff;
 
 class Base extends Tariff
 {
-    protected $pricePerKilometer = 10;
-    protected $pricePerTimeUnite = 3;
+    const PRICE_PER_KILOMETER = 10;
+    const PRICE_PET_TIME_UNITE = 3;
+
+    protected $pricePerKilometer;
+    protected $pricePerTimeUnite;
 
     public function __construct(float $distance, int $time, int $age, array $services = [])
     {
         parent::__construct($distance, $time, $age, $services);
+        $this->pricePerKilometer = self::PRICE_PER_KILOMETER;
+        $this->pricePerTimeUnite = self::PRICE_PET_TIME_UNITE;
     }
 }

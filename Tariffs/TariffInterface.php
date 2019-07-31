@@ -2,7 +2,7 @@
 
 namespace Tariff\Interfaces;
 
-interface ITariff
+interface TariffInterface
 {
     public function getPrice();
     public function setDistance(float $distance);

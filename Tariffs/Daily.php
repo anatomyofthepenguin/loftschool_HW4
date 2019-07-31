@@ -12,12 +12,17 @@ class Daily extends Tariff
 {
     use AddDriver;
 
-    protected $pricePerKilometer = 1;
-    protected $pricePerTimeUnite = 1000;
+    const PRICE_PER_KILOMETER = 1;
+    const PRICE_PET_TIME_UNITE = 1000;
+
+    protected $pricePerKilometer;
+    protected $pricePerTimeUnite;
 
     public function __construct(float $distance, int $time, int $age, array $services = [])
     {
         parent::__construct($distance, $time, $age, $services);
+        $this->pricePerKilometer = self::PRICE_PER_KILOMETER;
+        $this->pricePerTimeUnite = self::PRICE_PET_TIME_UNITE;
     }
 
     public function setTime(int $time)

@@ -12,12 +12,17 @@ class Hourly extends Tariff
 {
     use AddDriver;
 
-    protected $pricePerKilometer = 0;
-    protected $pricePerTimeUnite = 200;
+    const PRICE_PER_KILOMETER = 0;
+    const PRICE_PET_TIME_UNITE = 200;
+
+    protected $pricePerKilometer;
+    protected $pricePerTimeUnite;
 
     public function __construct(float $distance, int $time, int $age, array $services = [])
     {
         parent::__construct($distance, $time, $age, $services);
+        $this->pricePerKilometer = self::PRICE_PER_KILOMETER;
+        $this->pricePerTimeUnite = self::PRICE_PET_TIME_UNITE;
     }
 
     public function setTime(int $time)

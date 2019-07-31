@@ -2,15 +2,15 @@
 
 namespace Tariff\Abstracts;
 
-require 'ITariff.php';
+require 'TariffInterface.php';
 require __DIR__ . '/../Services/AddGps.php';
 require_once __DIR__ . '/../Services/Service.php';
 
-use Tariff\Interfaces\ITariff;
+use Tariff\Interfaces\TariffInterface;
 use Tariff\Traits\AddGps;
 use Tariff\Abstracts\Service;
 
-abstract class Tariff implements ITariff
+abstract class Tariff implements TariffInterface
 {
     use AddGps;
 
